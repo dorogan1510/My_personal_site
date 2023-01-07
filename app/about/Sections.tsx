@@ -5,7 +5,7 @@ const Sections = () => {
         <div className='space-y-20'>
             <section className='sm:border-l sm:border-zinc-200 sm:pl-6 sm:dark:border-zinc-700/40'>
                 <div className='grid gap-x-14 grid-cols-1 items-baseline gap-y-8 lg:grid-cols-5'>
-                    <h2 className='text-lg lg:col-span-2  text-zinc-800 dark:text-zinc-100'>
+                    <h2 className=' lg:col-span-2  text-zinc-800 dark:text-zinc-100'>
                         Языки програмирования, библиотеки и фреймворки
                     </h2>
 
@@ -64,9 +64,9 @@ const Sections = () => {
 
             <hr className='border-zinc-200  dark:border-zinc-700/40 sm:hidden' />
 
-            <section className='lg:border-l lg:border-zinc-200 lg:pl-6 lg:dark:border-zinc-700/40'>
+            <section className='sm:border-l sm:border-zinc-200 sm:pl-6 sm:dark:border-zinc-700/40'>
                 <div className='grid gap-x-14  grid-cols-1 items-baseline gap-y-8 lg:grid-cols-5'>
-                    <h2 className='text-lg lg:col-span-2  text-zinc-800 dark:text-zinc-100'>
+                    <h2 className=' lg:col-span-2  text-zinc-800 dark:text-zinc-100'>
                         Сборщики и упаковщики
                     </h2>
                     <div className='lg:col-span-3'>
@@ -106,9 +106,9 @@ const Sections = () => {
 
             <hr className='border-zinc-200  dark:border-zinc-700/40 sm:hidden' />
 
-            <section className='lg:border-l lg:border-zinc-200 lg:pl-6 lg:dark:border-zinc-700/40'>
+            <section className='sm:border-l sm:border-zinc-200 sm:pl-6 sm:dark:border-zinc-700/40'>
                 <div className='grid gap-x-14  grid-cols-1 items-baseline gap-y-8 lg:grid-cols-5'>
-                    <h2 className='text-lg lg:col-span-2  text-zinc-800 dark:text-zinc-100'>
+                    <h2 className=' lg:col-span-2  text-zinc-800 dark:text-zinc-100'>
                         Дизайн
                     </h2>
                     <div className='lg:col-span-3'>

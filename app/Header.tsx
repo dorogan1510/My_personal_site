@@ -1,5 +1,7 @@
+'use client'
+
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button, Modal, Navbar } from 'flowbite-react'
 import Image from 'next/image'
 import me_icon from '../src/img/me_icon.jpg'
@@ -12,24 +14,32 @@ const Header = () => {
     const [mounted, setMounted] = useState(false)
     const { theme, setTheme } = useTheme()
 
+    const modalRef = useRef<any>()
     const pathname = usePathname()
 
     useEffect(() => {
         if (theme === 'dark') setMounted(true)
-    }, [])
+    }, [theme])
+
+    useEffect(() => {
+        const checkIfClickedOutside = (e: MouseEvent) => {
+            if (visible && !modalRef.current.contains(e.target)) {
+                setVisible(false)
+            }
+        }
+        document.addEventListener('mousedown', checkIfClickedOutside)
+        return () => {
+            document.removeEventListener('mousedown', checkIfClickedOutside)
+        }
+    }, [visible])
 
     return (
         <header className=' mb-10 lg:mb-32 relative flex gap-2 items-center rounded-3xl '>
-            <Navbar.Brand href='/' color='gray' className=' flex flex-1 '>
-                {/* <Image
-                    className='rounded-3xl'
-                    src={me_icon}
-                    alt='Picture of the author'
-                    width={50}
-                    height={50}
-                    priority={true}
-                /> */}
-            </Navbar.Brand>
+            <Navbar.Brand
+                href='/'
+                color='gray'
+                className=' flex flex-1 '
+            ></Navbar.Brand>
             <Navbar className='hidden md:block rounded-3xl text-center font-medium justify-end dark:bg-transparent border'>
                 <Navbar.Collapse className='mx-auto flex justify-end '>
                     <Navbar.Link
@@ -89,40 +99,35 @@ const Header = () => {
                 onClose={() => setVisible(false)}
                 className='bg-black h-screen '
             >
-                <Modal.Header className=' bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800  '>
-                    Меню
-                </Modal.Header>
-                <Modal.Body className=' bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800'>
-                    <div className='space-y-6 flex flex-col '>
-                        <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
-                            <Link href={'/'} onClick={() => setVisible(false)}>
+                <Modal.Body className='rounded-xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800'>
+                    <div
+                        ref={modalRef}
+                        className='text-center space-y-6 flex flex-col '
+                    >
+                        <Link href={'/'} onClick={() => setVisible(false)}>
+                            <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
                                 Главная
-                            </Link>
-                        </div>
-                        <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
-                            <Link
-                                href={'/about'}
-                                onClick={() => setVisible(false)}
-                            >
+                            </div>
+                        </Link>
+                        <Link href={'/about'} onClick={() => setVisible(false)}>
+                            <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
                                 Обо мне
-                            </Link>
-                        </div>
-                        <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
-                            <Link
-                                href={'/price'}
-                                onClick={() => setVisible(false)}
-                            >
+                            </div>
+                        </Link>
+                        <Link href={'/price'} onClick={() => setVisible(false)}>
+                            <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
                                 Цены
-                            </Link>
-                        </div>
-                        <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
-                            <Link
-                                href={'/portfolio'}
-                                onClick={() => setVisible(false)}
-                            >
+                            </div>
+                        </Link>
+
+                        <Link
+                            href={'/portfolio'}
+                            onClick={() => setVisible(false)}
+                        >
+                            <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
                                 Портфолио
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                     </div>
                 </Modal.Body>
             </Modal>

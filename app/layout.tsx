@@ -1,12 +1,7 @@
-'use client'
-
 import './globals.css'
 import Header from './Header'
 import Footer from './Footer'
-import FMWrapper from './FMWrapper'
-import { useEffect, useState } from 'react'
 import localFont from '@next/font/local'
-import { ThemeProvider } from 'next-themes'
 import { Provider } from './Provider'
 
 const roboto = localFont({
