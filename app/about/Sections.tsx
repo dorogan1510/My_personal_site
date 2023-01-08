@@ -43,15 +43,15 @@ const Sections = () => {
                             </li>
                             <li>
                                 <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
-                                    Система контроля версий
+                                    Анимации
                                 </h3>
                                 <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                                    Git, Github
+                                    Framer-motion, React Transition Group
                                 </p>
                             </li>
                             <li>
                                 <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
-                                    Сборщики и упаков
+                                    Система контроля версий
                                 </h3>
                                 <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
                                     Git, Github

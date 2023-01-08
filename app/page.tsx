@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import me_photo from '../src/img/me_photo.jpg'
-import Projects from '../components/Projects'
 import FMWrapperRight from '../components/FMWrapperRight'
+
+import Projects from '../components/Projects'
 
 export default function Home() {
     return (
@@ -115,6 +116,7 @@ export default function Home() {
                         />
                     </div>
                 </div>
+
                 <Projects />
             </main>
         </FMWrapperRight>

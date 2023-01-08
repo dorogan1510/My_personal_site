@@ -65,10 +65,30 @@ const Project1 = () => {
             <Modal
                 show={visible}
                 position='center'
-                size='5xl'
+                size='4xl'
                 className='bg-black h-screen '
             >
                 <Modal.Body className=' rounded-xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800'>
+                    <div className='mb-4 flex flex-row justify-between '>
+                        <div></div>
+                        <button onClick={() => setVisible(false)}>
+                            <svg
+                                className='fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300'
+                                aria-hidden='true'
+                                fill='currentColor'
+                                viewBox='0 0 24 24'
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='30'
+                                height='30'
+                            >
+                                <path
+                                    clipRule='evenodd'
+                                    d='M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z'
+                                    fillRule='evenodd'
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
                     <div
                         ref={modalRef}
                         className='flex flex-col lg:flex-row justify-between gap-2'

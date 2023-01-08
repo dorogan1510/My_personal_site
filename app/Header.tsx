@@ -63,13 +63,6 @@ const Header = () => {
                     >
                         Цены
                     </Navbar.Link>
-                    <Navbar.Link
-                        href='/portfolio'
-                        active={pathname == '/portfolio' ? true : false}
-                        className='transition'
-                    >
-                        Портфолио
-                    </Navbar.Link>
                 </Navbar.Collapse>
             </Navbar>
             <Button
@@ -117,15 +110,6 @@ const Header = () => {
                         <Link href={'/price'} onClick={() => setVisible(false)}>
                             <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
                                 Цены
-                            </div>
-                        </Link>
-
-                        <Link
-                            href={'/portfolio'}
-                            onClick={() => setVisible(false)}
-                        >
-                            <div className='block py-2 pr-4 pl-3 md:p-0 border-b   text-gray-700 hover:bg-gray-50 border-zinc-200 dark:border-zinc-700/40 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>
-                                Портфолио
                             </div>
                         </Link>
                     </div>
