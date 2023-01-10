@@ -17,7 +17,7 @@ const ALL_PROJECTS_TEXT = [
     {
         id: 1,
         h2text: 'Сайт школы английского языка',
-        p2text: 'Вы можете выбрать себе учителя и начать учить английский язык',
+        p2text: 'Вы можете выбрать себе преподавателя и начать изучать английский язык',
         litext: ['JS ES6+', 'SASS', 'Laravel Mix'],
         githubUrl: 'https://github.com/dorogan1510/englishSchoolSite',
         externalUrl: 'https://pollyglotiki.com/',
@@ -26,7 +26,7 @@ const ALL_PROJECTS_TEXT = [
     {
         id: 2,
         h2text: 'Сайт визитка',
-        p2text: 'Лендинг для преподавателя английского языка. CSS анимации, адаптивная верстка, вся важная информация на одной странице',
+        p2text: 'Лендинг для преподавателя иностранных языков. CSS анимации, адаптивная верстка, вся важная информация на одной странице',
         litext: ['JS ES6+', 'SASS', 'Laravel Mix', 'CSS animations'],
         githubUrl: 'https://github.com/dorogan1510/web_card',
         externalUrl: 'https://easyenglishyou.ru/morkoovochka',
