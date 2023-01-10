@@ -113,6 +113,7 @@ export default function Home() {
                             alt='Picture of the author'
                             width={250}
                             height={250}
+                            priority={true}
                         />
                     </div>
                 </div>
