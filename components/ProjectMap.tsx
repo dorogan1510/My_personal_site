@@ -135,6 +135,7 @@ const ProjectMap = () => {
                                     width={250}
                                     height={250}
                                     className='mb-2 rounded-xl'
+                                    priority={true}
                                 />
 
                                 <h2 className='font-medium mb-2  text-zinc-800 dark:text-zinc-100 text-center '>
@@ -251,6 +252,7 @@ const ProjectMap = () => {
                                     alt={'...'}
                                     width={500}
                                     height={500}
+                                    priority={true}
                                 ></Image>
                             </Link>
                         </div>

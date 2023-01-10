@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, Modal, Navbar } from 'flowbite-react'
-import Image from 'next/image'
-import me_icon from '../src/img/me_icon.jpg'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 

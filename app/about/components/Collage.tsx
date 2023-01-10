@@ -36,6 +36,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </div>
                     </FMWrapperImage>
@@ -47,6 +48,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </div>
                     </FMWrapperImage>
@@ -58,6 +60,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </div>
                     </FMWrapperImage>
@@ -69,6 +72,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </div>
                     </FMWrapperImage>
@@ -80,6 +84,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </div>
                     </FMWrapperImage>
@@ -94,6 +99,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </FMWrapperImage>
                     </div>
@@ -105,6 +111,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </FMWrapperImage>
                     </div>
@@ -116,6 +123,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </FMWrapperImage>
                     </div>
@@ -126,6 +134,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </FMWrapperImage>
                     </div>
@@ -136,6 +145,7 @@ const Collage = () => {
                                 alt={'image_1'}
                                 width={300}
                                 height={300}
+                                priority={true}
                             />
                         </FMWrapperImage>
                     </div>
