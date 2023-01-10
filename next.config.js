@@ -2,7 +2,6 @@
 const nextConfig = {
     experimental: {
         compiler: {
-            // Enables the styled-components SWC transform
             styledComponents: true,
         },
         appDir: true,
