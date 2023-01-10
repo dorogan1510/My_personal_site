@@ -32,9 +32,14 @@ export default function RootLayout({
     return (
         <html lang='en' className={roboto.className}>
             <head />
-            <body className='bg-[#fafafa] dark:bg-black text-white transition duration-300 '>
+            <body className='bg-zinc-50 dark:bg-black text-white transition duration-300 '>
                 <Provider>
-                    <div className='bg-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] transition duration-300 max-w-6xl p-6 sm:px-20  bg:white dark:bg-[#18181B]  w-full sm:w-11/12  border-gray-700 h-full mx-auto'>
+                    <div className='fixed inset-0 flex justify-center sm:px-8'>
+                        <div className='flex w-full max-w-7xl lg:px-8'>
+                            <div className='w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20'></div>
+                        </div>
+                    </div>
+                    <div className='relative lg:space-y-16 space-y-8 py-10'>
                         <Header />
                         {children}
                         <Footer />

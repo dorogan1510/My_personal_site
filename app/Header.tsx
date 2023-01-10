@@ -34,7 +34,7 @@ const Header = () => {
     }, [visible])
 
     return (
-        <header className=' mb-10 lg:mb-32 relative flex gap-2 items-center rounded-3xl '>
+        <header className='px-6 sm:px-20 w-full sm:w-11/12 max-w-6xl mx-auto  lg:mb-32 relative flex gap-2 items-center rounded-3xl '>
             <Navbar.Brand
                 href='/'
                 color='gray'

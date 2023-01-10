@@ -2,7 +2,10 @@ import React from 'react'
 
 const Sections = () => {
     return (
-        <div className='space-y-20'>
+        <div className='p-6 sm:px-20 w-full sm:w-11/12 mx-auto max-w-6xl space-y-20'>
+            <h2 className='text-xl font-bold text-center text-zinc-800 dark:text-zinc-100 lg:text-3xl  '>
+                Технологии которые я использую в своей работе
+            </h2>
             <section className='sm:border-l sm:border-zinc-200 sm:pl-6 sm:dark:border-zinc-700/40'>
                 <div className='grid gap-x-14 grid-cols-1 items-baseline gap-y-8 lg:grid-cols-5'>
                     <h2 className=' lg:col-span-2  text-zinc-800 dark:text-zinc-100'>
@@ -16,20 +19,34 @@ const Sections = () => {
                                     JavaScript
                                 </h3>
                                 <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                                    ES5, ES6+
+                                    ES5: если приходится работать со старым
+                                    кодом. ES6+: во всех остальных случаях
                                 </p>
                             </li>
                             <li>
                                 <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
                                     Typescript
                                 </h3>
+                                <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                                    На данный момент использую его во всех новых
+                                    сайтах и приложениях
+                                </p>
                             </li>
                             <li>
                                 <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
                                     React.js
                                 </h3>
                                 <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                                    Next.js 13, Redux Toolkit, MobX
+                                    Next.js 13: использую во всех новых сайтах и
+                                    приложениях, в том числе и на этом сайте
+                                </p>
+                            </li>
+                            <li>
+                                <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
+                                    Стейт менеджеры
+                                </h3>
+                                <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                                    Redux Toolkit, MobX
                                 </p>
                             </li>
                             <li>
@@ -118,15 +135,33 @@ const Sections = () => {
                                     Figma
                                 </h3>
                                 <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                                    Использую в работе чаще всего
+                                    Использую чаще всего в разработке веб
+                                    дизайна
                                 </p>
                             </li>
                             <li>
                                 <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
-                                    Adobe
+                                    Adobe Photoshop
                                 </h3>
                                 <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                                    Photoshop, XD, After Effects
+                                    Использую в работе с изображениями
+                                </p>
+                            </li>
+                            <li>
+                                <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
+                                    Adobe XD
+                                </h3>
+                                <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                                    Использую в случае, если по каким-то
+                                    причинам не получается использовать фигму
+                                </p>
+                            </li>
+                            <li>
+                                <h3 className='text-base  tracking-tight text-zinc-800 dark:text-zinc-100'>
+                                    Adobe After Effects
+                                </h3>
+                                <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                                    Использую в работе с моушн дизайном
                                 </p>
                             </li>
                         </ul>

@@ -8,19 +8,19 @@ import Projects from '../components/Projects'
 export default function Home() {
     return (
         <FMWrapperRight>
-            <main>
+            <main className='px-6 sm:px-20 w-full sm:w-11/12 max-w-6xl mx-auto'>
                 <div className='mb-20 flex flex-col lg:flex-row justify-between items-center gap-6'>
                     <div className='max-w-xl'>
-                        <h1 className='text-3xl font-sans font-bold text-zinc-800 dark:text-zinc-100 lg:text-5xl text-center lg:text-left'>
+                        <h1 className='text-3xl font-sans font-bold text-zinc-800 dark:text-zinc-100 lg:text-5xl '>
                             Привет, меня зовут Данила и я делаю сайты
                         </h1>
-                        <p className='my-6 text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 text-center lg:text-left'>
-                            Привет, я сделаю для тебя сайт на любой вкус.
-                            Свяжись со мной и мы обсудим все детали Привет, я
-                            сделаю для тебя сайт на любой вкус. Свяжись со мной
-                            и мы обсудим все детали
+                        <p className='my-6 text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 '>
+                            Я фронтенд разработчик и фрилансер, создаю разные
+                            проекты для интернета и с удовольствием сделаю для
+                            вас сайт или приложение на ваш вкус. Напишите мне и
+                            мы обсдуим все детали.
                         </p>
-                        <div className='flex flex-row justify-center  lg:justify-start gap-2'>
+                        <div className='flex flex-row justify-start gap-4'>
                             <Link
                                 href={'https://t.me/danfrolov94'}
                                 className='group'

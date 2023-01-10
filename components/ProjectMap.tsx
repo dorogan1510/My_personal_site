@@ -13,7 +13,7 @@ import weather_scrin from '/src/img/weather_scrin.jpg'
 import todo_scrin from '/src/img/todo_scrin.jpg'
 import online_store_scrin from '/src/img/online_store_scrin.jpg'
 
-const ALL_PROJECTS = [
+const ALL_PROJECTS_TEXT = [
     {
         id: 1,
         h2text: 'Сайт школы английского языка',
@@ -96,7 +96,7 @@ const ALL_PROJECTS = [
 
 const ProjectMap = () => {
     const [visible, setVisible] = useState(false)
-    const [modalData, setModalData] = useState<any>(ALL_PROJECTS[1])
+    const [modalData, setModalData] = useState<any>(ALL_PROJECTS_TEXT[1])
 
     const modalRef = useRef<any>()
 
@@ -114,10 +114,10 @@ const ProjectMap = () => {
 
     return (
         <>
-            {ALL_PROJECTS.map(data => (
+            {ALL_PROJECTS_TEXT.map(data => (
                 <div
                     key={data.id}
-                    className='p-4 bg-zinc-100 bg-opacity-0 transition duration-300 hover:bg-opacity-100 dark:bg-zinc-800 dark:bg-opacity-0 dark:hover:bg-opacity-100 sm:rounded-2xl flex flex-col items-center'
+                    className='p-4 lg:bg-zinc-100 lg:bg-opacity-0 transition duration-300 lg:hover:bg-opacity-100 lg:dark:bg-zinc-800 lg:dark:bg-opacity-0 lg:dark:hover:bg-opacity-100 sm:rounded-2xl flex flex-col items-center'
                 >
                     <button
                         onClick={() => {
@@ -152,7 +152,7 @@ const ProjectMap = () => {
             <Modal
                 show={visible}
                 position='center'
-                size='4xl'
+                size='5xl'
                 className='bg-black h-screen '
             >
                 <Modal.Body className=' rounded-xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800'>
