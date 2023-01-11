@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { Modal } from 'flowbite-react'
 import business_card_scrin from '/src/img/business_card_scrin.jpg'
@@ -13,7 +13,17 @@ import weather_scrin from '/src/img/weather_scrin.jpg'
 import todo_scrin from '/src/img/todo_scrin.jpg'
 import online_store_scrin from '/src/img/online_store_scrin.jpg'
 
-const ALL_PROJECTS_TEXT = [
+interface IALL_PROJECTS_TEXT {
+    id: number
+    h2text: string
+    p2text: string
+    litext: Array<string>
+    githubUrl: string
+    externalUrl: string
+    image: StaticImageData
+}
+
+const ALL_PROJECTS_TEXT: IALL_PROJECTS_TEXT[] = [
     {
         id: 1,
         h2text: 'Сайт школы английского языка',
@@ -95,15 +105,19 @@ const ALL_PROJECTS_TEXT = [
 ]
 
 const ProjectMap = () => {
-    const [visible, setVisible] = useState(false)
-    const [modalData, setModalData] = useState<any>(ALL_PROJECTS_TEXT[1])
+    const [visible, setVisible] = useState<boolean>(false)
+    const [modalData, setModalData] = useState<IALL_PROJECTS_TEXT>(
+        ALL_PROJECTS_TEXT[0]
+    )
 
-    const modalRef = useRef<any>()
+    const modalRef = useRef() as React.MutableRefObject<HTMLDivElement>
 
     useEffect(() => {
         const checkIfClickedOutside = (e: MouseEvent) => {
-            if (visible && !modalRef?.current?.contains(e.target)) {
-                setVisible(false)
+            if (modalRef.current !== undefined) {
+                if (visible && !modalRef.current.contains(e.target as Node)) {
+                    setVisible(false)
+                }
             }
         }
         document.addEventListener('mousedown', checkIfClickedOutside)
@@ -192,7 +206,7 @@ const ProjectMap = () => {
                                 </p>
                                 <ul className='space-y-2 list-disc list-inside mb-10 text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400'>
                                     {modalData.litext.map(
-                                        (dataLi: any, index: any) => (
+                                        (dataLi: string, index: number) => (
                                             <li key={index}>{dataLi}</li>
                                         )
                                     )}

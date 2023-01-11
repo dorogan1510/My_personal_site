@@ -12,7 +12,7 @@ const Header = () => {
     const [mounted, setMounted] = useState(false)
     const { theme, setTheme } = useTheme()
 
-    const modalRef = useRef<any>()
+    const modalRef = useRef() as React.MutableRefObject<HTMLDivElement>
     const pathname = usePathname()
 
     useEffect(() => {
@@ -21,8 +21,10 @@ const Header = () => {
 
     useEffect(() => {
         const checkIfClickedOutside = (e: MouseEvent) => {
-            if (visible && !modalRef.current.contains(e.target)) {
-                setVisible(false)
+            if (modalRef.current !== undefined) {
+                if (visible && !modalRef.current.contains(e.target as Node)) {
+                    setVisible(false)
+                }
             }
         }
         document.addEventListener('mousedown', checkIfClickedOutside)

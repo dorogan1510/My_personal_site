@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sections = () => {
     return (
-        <div className='p-6 sm:px-20 w-full sm:w-11/12 mx-auto max-w-6xl space-y-20'>
+        <div className='px-6 sm:px-20 w-full sm:w-11/12 mx-auto max-w-6xl space-y-20'>
             <h2 className='text-xl font-bold text-center text-zinc-800 dark:text-zinc-100 lg:text-3xl  '>
                 Технологии которые я использую в своей работе
             </h2>

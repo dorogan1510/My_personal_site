@@ -12,10 +12,10 @@ export default function Home() {
                 <div className='mb-20 flex flex-col lg:flex-row justify-between items-center gap-6'>
                     <div className='max-w-xl'>
                         <h1 className='text-3xl font-sans font-bold text-zinc-800 dark:text-zinc-100 lg:text-5xl '>
-                            Привет, меня зовут Данила и я делаю сайты
+                            Привет, меня зовут Данила и я фронтенд разработчик
                         </h1>
                         <p className='my-6 text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 '>
-                            Я фронтенд разработчик и фрилансер, создаю разные
+                            Я занимаюсь веб разработкой, создаю разные
                             интернет-проекты и с удовольствием сделаю для вас
                             сайт или приложение на ваш вкус. Напишите мне и мы
                             обсудим все детали.

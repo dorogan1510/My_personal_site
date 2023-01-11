@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from 'react'
 const PriceSection = () => {
     const svgCheck = (
         <svg
-            className='fill-zinc-500 transition  dark:fill-zinc-400 '
+            className='fill-green-500 transition '
             aria-hidden='true'
             fill='currentColor'
             viewBox='0 0 24 24'
@@ -29,8 +29,8 @@ const PriceSection = () => {
             fill='currentColor'
             viewBox='0 0 24 24'
             xmlns='http://www.w3.org/2000/svg'
-            width='30'
-            height='30'
+            width='24'
+            height='24'
         >
             <path
                 clipRule='evenodd'
@@ -66,7 +66,7 @@ const PriceSection = () => {
         {
             id: 2,
             h2text: 'Многостраничный сайт с шаблонным дизайном',
-            p2text: 'Данный вариант подойдет если нужно, чтобы на сайте было больше, чем 2 страницы. Без уникального дизайна',
+            p2text: 'Данный вариант подойдет если нужно, чтобы на сайте было больше, чем 2 страницы без уникального дизайна.',
             h3text: 'Что включено',
 
             litext1: [
@@ -77,7 +77,7 @@ const PriceSection = () => {
 
             litext2: [
                 'Разработка индивидуального дизайна',
-                'Эффекты и анимация (по запросу)',
+                'Эффекты и анимация',
                 'Подключение оплаты через сайт',
             ],
 
@@ -91,7 +91,7 @@ const PriceSection = () => {
         {
             id: 1,
             h2text: 'Лендинг с уникальным дизайном',
-            p2text: 'Данный вариант подойдет для того, кому нужен одностраничный сайт с авторским дизайном.',
+            p2text: 'Данный вариант подойдет для того, кому нужен одностраничный сайт с авторским дизайном и всей информацией в одном месте.',
             h3text: 'Что включено',
 
             litext1: [
@@ -102,18 +102,18 @@ const PriceSection = () => {
 
             litext2: [
                 'Разработка индивидуального дизайна',
-                'Эффекты и анимация (по запросу)',
+                'Эффекты и анимация',
                 'Подключение оплаты через сайт',
             ],
 
-            pricesum: '₽20000',
+            pricesum: '₽15000',
             termtext: 'Срок работы: от 7 дней',
             modalptext: '"Хочу заказать лендинг с уникальным дизайном"',
         },
         {
             id: 2,
             h2text: 'Многостраничный сайт с уникальным дизайном',
-            p2text: 'Данный вариант подойдет если нужно, чтобы на сайте было больше, чем 2 страницы с уникальным дизайном',
+            p2text: 'Данный вариант подойдет если нужно, чтобы на сайте было больше, чем 2 страницы с уникальным дизайном.',
             h3text: 'Что включено',
 
             litext1: [
@@ -124,7 +124,7 @@ const PriceSection = () => {
 
             litext2: [
                 'Разработка индивидуального дизайна',
-                'Эффекты и анимация (по запросу)',
+                'Эффекты и анимация',
                 'Подключение оплаты через сайт',
             ],
 
@@ -139,16 +139,15 @@ const PriceSection = () => {
     const [modalDataWithoutDesign, setModalDataWithoutDesign] = useState<any>(
         ALL_PRICES_TEXT_WITHOUT_DESIGN[0]
     )
-    const [modalDataWithDesign, setModalDataWithDesign] = useState<any>(
-        ALL_PRICES_TEXT_WITH_DESIGN[0]
-    )
 
-    const modalRef = useRef<any>()
+    const modalRef = useRef() as React.MutableRefObject<HTMLDivElement>
 
     useEffect(() => {
         const checkIfClickedOutside = (e: MouseEvent) => {
-            if (visible && !modalRef?.current?.contains(e.target)) {
-                setVisible(false)
+            if (modalRef.current !== undefined) {
+                if (visible && !modalRef.current.contains(e.target as Node)) {
+                    setVisible(false)
+                }
             }
         }
         document.addEventListener('mousedown', checkIfClickedOutside)
@@ -165,7 +164,7 @@ const PriceSection = () => {
                     className='p-6 rounded-xl border border-zinc-100 dark:border-zinc-700/40 flex flex-col lg:flex-row justify-between items-center gap-4 shadow dark:shadow-[0_1px_3px_0_rgba(255, 255, 255, 0.2)]'
                 >
                     <div className='max-w-lg flex-2'>
-                        <h2 className='text-3xl font-bold text-zinc-800 dark:text-zinc-100'>
+                        <h2 className='text-xl lg:text-3xl font-bold text-zinc-800 dark:text-zinc-100'>
                             {data.h2text}
                         </h2>
                         <p className='my-6 text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400'>
@@ -182,8 +181,10 @@ const PriceSection = () => {
                                             key={index}
                                             className='flex flex-row justify-start items-center gap-2'
                                         >
-                                            {svgCheck}
-                                            <p className='text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 text-center lg:text-left'>
+                                            <div className='flex-2'>
+                                                {svgCheck}
+                                            </div>
+                                            <p className='text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 '>
                                                 {litext1}
                                             </p>
                                         </div>
@@ -195,8 +196,10 @@ const PriceSection = () => {
                                             key={index}
                                             className='flex flex-row justify-start items-center gap-2'
                                         >
-                                            {svgXMark}
-                                            <p className='text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 text-center lg:text-left'>
+                                            <div className='flex-2'>
+                                                {svgXMark}
+                                            </div>
+                                            <p className='text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 '>
                                                 {litext2}
                                             </p>
                                         </div>
@@ -206,7 +209,7 @@ const PriceSection = () => {
                         </div>
                     </div>
                     <div className='flex flex-col flex-1 justify-between items-center gap-4'>
-                        <div className='text-5xl font-bold text-zinc-800 dark:text-zinc-100'>
+                        <div className='text-3xl lg:text-5xl font-bold text-zinc-800 dark:text-zinc-100'>
                             {data.pricesum}
                         </div>
                         <Button
@@ -233,7 +236,7 @@ const PriceSection = () => {
                     className='p-6 rounded-xl border border-zinc-100 dark:border-zinc-700/40 flex flex-col lg:flex-row justify-between items-center gap-4 shadow dark:shadow-[0_1px_3px_0_rgba(255, 255, 255, 0.2)]'
                 >
                     <div className='max-w-lg flex-2'>
-                        <h2 className='text-3xl font-bold text-zinc-800 dark:text-zinc-100'>
+                        <h2 className='text-xl lg:text-3xl font-bold text-zinc-800 dark:text-zinc-100'>
                             {data.h2text}
                         </h2>
                         <p className='my-6 text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400'>
@@ -250,8 +253,10 @@ const PriceSection = () => {
                                             key={index}
                                             className='flex flex-row justify-start items-center gap-2'
                                         >
-                                            {svgCheck}
-                                            <p className='text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 text-center lg:text-left'>
+                                            <div className='flex-2'>
+                                                {svgCheck}
+                                            </div>
+                                            <p className=' text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 '>
                                                 {litext1}
                                             </p>
                                         </div>
@@ -263,8 +268,10 @@ const PriceSection = () => {
                                             key={index}
                                             className='flex flex-row justify-start items-center gap-2'
                                         >
-                                            {svgCheck}
-                                            <p className='text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 text-center lg:text-left'>
+                                            <div className='flex-2'>
+                                                {svgCheck}
+                                            </div>
+                                            <p className='text-base text-zinc-500 text[#8b8b94] dark:text-zinc-400 '>
                                                 {litext2}
                                             </p>
                                         </div>
@@ -274,7 +281,7 @@ const PriceSection = () => {
                         </div>
                     </div>
                     <div className='flex flex-col flex-1 justify-between items-center gap-4'>
-                        <div className='text-5xl font-bold text-zinc-800 dark:text-zinc-100'>
+                        <div className='text-3xl lg:text-5xl text-center font-bold text-zinc-800 dark:text-zinc-100'>
                             {data.pricesum}
                         </div>
                         <Button
@@ -302,7 +309,7 @@ const PriceSection = () => {
                 className='bg-black h-screen '
             >
                 <Modal.Body className=' rounded-xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800'>
-                    <div className='text-center' ref={modalRef}>
+                    <div className='text-left' ref={modalRef}>
                         <h3 className='mb-2 text-xl font-bold text-zinc-800 dark:text-zinc-100 '>
                             Выберите удобный для вас способ связи
                         </h3>
@@ -311,7 +318,7 @@ const PriceSection = () => {
                             <b>{modalDataWithoutDesign.modalptext}</b> <br />и
                             мы обсудим с вами все детали
                         </p>
-                        <div className='flex flex-row justify-center gap-6'>
+                        <div className='flex flex-row justify-start gap-6'>
                             <Link
                                 href={'https://t.me/danfrolov94'}
                                 className='group'

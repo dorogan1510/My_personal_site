@@ -91,7 +91,7 @@ const Footer = () => {
                         </svg>
                     </Link>
                 </div>
-                <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
+                <div className='flex flex-col  justify-between items-center gap-4'>
                     <ul className='flex flex-wrap justify-between gap-4  items-center  text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0'>
                         <li>
                             <Link
@@ -120,7 +120,7 @@ const Footer = () => {
                     </ul>
 
                     <span className='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
-                        © 2023 Danila Frolov. All rights reserved.
+                        © 2023 Danila Frolov
                     </span>
                 </div>
             </div>

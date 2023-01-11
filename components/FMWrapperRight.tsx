@@ -2,8 +2,9 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ScriptProps } from 'next/script'
 
-const FMWrapperRight = ({ children }: any) => {
+const FMWrapperRight = ({ children }: ScriptProps) => {
     return (
         <AnimatePresence>
             <motion.div
