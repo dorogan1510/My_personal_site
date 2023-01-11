@@ -20,7 +20,6 @@ const Collage = () => {
     useEffect(() => {
         setTimeout(() => {
             setImageTrue(!imageTrue)
-            console.log('false')
         }, 10000)
     })
 
