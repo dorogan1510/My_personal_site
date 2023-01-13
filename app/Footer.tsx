@@ -111,7 +111,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link
-                                href='/prices'
+                                href='/price'
                                 className=' border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white border-0 hover:bg-transparent hover:text-blue-700 dark:hover:bg-transparent transition'
                             >
                                 Цены
