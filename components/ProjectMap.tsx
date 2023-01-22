@@ -1,60 +1,67 @@
 'use client'
 
-import Link from 'next/link'
-import Image, { StaticImageData } from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
 import { Modal } from 'flowbite-react'
-import business_card_scrin from '/src/img/business_card_scrin.jpg'
-import polina_site_scrin from '/src/img/polina_site_scrin.png'
-import english_course_scrin from '/src/img/english_course_scrin.jpg'
-import expense_tracker_scrin from '/src/img/expense_tracker_scrin.jpg'
-import evil_calculator_scrin from '/src/img/evil_calculator_scrin.jpg'
-import weather_scrin from '/src/img/weather_scrin.jpg'
-import todo_scrin from '/src/img/todo_scrin.jpg'
-import online_store_scrin from '/src/img/online_store_scrin.jpg'
+import Image, { StaticImageData } from 'next/image'
+import Link from 'next/link'
+import React, { useEffect, useRef, useState } from 'react'
+import business_card_screen from '/src/img/business_card_screen.webp'
+import child_club_screen from '/src/img/child_club_screen.webp'
+import english_course_screen from '/src/img/english_course_screen.webp'
+import evil_calculator_screen from '/src/img/evil_calculator_screen.webp'
+import expense_tracker_screen from '/src/img/expense_tracker_screen.webp'
+import online_store_screen from '/src/img/online_store_screen.webp'
+import polina_site_screen from '/src/img/polina_site_screen.webp'
+import todo_screen from '/src/img/todo_screen.webp'
+import weather_screen from '/src/img/weather_screen.webp'
 
 interface IALL_PROJECTS_TEXT {
     id: number
     h2text: string
     p2text: string
     litext: Array<string>
-    githubUrl: string
     externalUrl: string
     image: StaticImageData
 }
 
 const ALL_PROJECTS_TEXT: IALL_PROJECTS_TEXT[] = [
     {
+        id: 9,
+        h2text: 'Сайт детского футбольного клуба',
+        p2text: 'Лендинг детского футбольного клуба из Самарской области.',
+        litext: ['Next.js 13', 'Typescript', 'MaterialUI'],
+        externalUrl: 'https://www.dfk-bezenchuk.ru/',
+        image: child_club_screen,
+    },
+    {
         id: 1,
         h2text: 'Сайт школы английского языка',
-        p2text: 'Вы можете выбрать себе преподавателя и начать изучать английский язык',
+        p2text: 'Лендинг школы английского языка, где вы можете выбрать себе преподавателя и начать изучать английский язык.',
         litext: ['JS ES6+', 'SASS', 'Laravel Mix'],
-        githubUrl: 'https://github.com/dorogan1510/englishSchoolSite',
+
         externalUrl: 'https://pollyglotiki.com/',
-        image: polina_site_scrin,
+        image: polina_site_screen,
     },
     {
         id: 2,
         h2text: 'Сайт визитка',
-        p2text: 'Лендинг для преподавателя иностранных языков. CSS анимации, адаптивная верстка, вся важная информация на одной странице',
+        p2text: 'Лендинг для преподавателя иностранных языков. CSS анимации, адаптивная верстка, вся информация на одной странице.',
         litext: ['JS ES6+', 'SASS', 'Laravel Mix', 'CSS animations'],
-        githubUrl: 'https://github.com/dorogan1510/web_card',
+
         externalUrl: 'https://easyenglishyou.ru/morkoovochka',
-        image: business_card_scrin,
+        image: business_card_screen,
     },
     {
         id: 3,
         h2text: 'Сайт для продажи курса английского языка',
-        p2text: 'Коммерческий лендинг для продажи онлайн курса. Адаптивная и кроссбраузерная верстка.',
+        p2text: 'Коммерческий лендинг для продажи онлайн курса английского языка.',
         litext: ['JS ES6+', 'SASS', 'Laravel Mix'],
-        githubUrl: 'https://github.com/dorogan1510/English_course',
         externalUrl: 'https://easyenglishyou.ru/',
-        image: english_course_scrin,
+        image: english_course_screen,
     },
     {
         id: 4,
         h2text: 'Приложение для учета финансов',
-        p2text: 'Ты всегда будешь оставаться в курсе своих ежедневных трат',
+        p2text: 'Присутствует базовый функционал и статистика по вашим тратам.',
         litext: [
             'React.js/Redux toolkit',
             'Typescript',
@@ -62,45 +69,40 @@ const ALL_PROJECTS_TEXT: IALL_PROJECTS_TEXT[] = [
             'Framer motion',
             'Chart.js',
         ],
-        githubUrl: 'https://github.com/dorogan1510/react_ts_expense_tracker',
         externalUrl: 'https://clever-kleicha-fffcdd.netlify.app/',
-        image: expense_tracker_scrin,
+        image: expense_tracker_screen,
     },
     {
         id: 5,
         h2text: 'Злой калькулятор',
-        p2text: 'Мини игра, где тебе придется пройти небольшой квест, сыграть в игру "Виселица" и наконец получить свой ответ',
+        p2text: 'Мини игра, где вам придется пройти небольшой квест, сыграть в "Виселицу" и наконец получить свой ответ.',
         litext: ['React.js', 'React-Bootstrap/SASS', 'useSound'],
-        githubUrl: 'https://github.com/dorogan1510/evil_calculator',
         externalUrl: 'https://enchanting-eclair-59989f.netlify.app/',
-        image: evil_calculator_scrin,
+        image: evil_calculator_screen,
     },
     {
         id: 6,
         h2text: 'Виджет погоды',
-        p2text: 'Узнай погоду в любой точке мира и посмотри лучшие фото того места, которое ты ввел.',
+        p2text: 'Узнайте погоду в любой точке мира и наслаждайтесь лучшими фото этого места.',
         litext: ['JS ES6+', 'SASS', 'Laravel Mix', 'Fetch API'],
-        githubUrl: 'https://github.com/dorogan1510/weather',
         externalUrl: 'https://dorogan1510.github.io/weather/',
-        image: weather_scrin,
+        image: weather_screen,
     },
     {
         id: 7,
         h2text: 'Список задач',
-        p2text: 'Минималистичный список задач с базовым фукционалом и плавными анимациями',
+        p2text: 'Минималистичный список задач с базовым фукционалом и плавными анимациями.',
         litext: ['React.js', 'Typescript', 'React transition group'],
-        githubUrl: 'https://github.com/dorogan1510/React_todoList',
         externalUrl: 'https://gorgeous-quokka-121d0f.netlify.app/',
-        image: todo_scrin,
+        image: todo_screen,
     },
     {
         id: 8,
         h2text: 'Онлайн магазин в тестовом режиме',
         p2text: 'Онлайн магазин с фейковым API и базовым функционалом.',
         litext: ['React.js/Mobx', 'MaterialUI/SASS', 'Axios/Fuse.js'],
-        githubUrl: 'https://github.com/dorogan1510/New_online_store',
         externalUrl: 'https://vocal-donut-4e3013.netlify.app/',
-        image: online_store_scrin,
+        image: online_store_screen,
     },
 ]
 
@@ -213,22 +215,6 @@ const ProjectMap = () => {
                                 </ul>
 
                                 <div className='flex flex-row justify-start gap-2'>
-                                    <Link
-                                        href={modalData.githubUrl}
-                                        target='_blank'
-                                        rel='noreferrer'
-                                        className='group'
-                                    >
-                                        <svg
-                                            className='fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300'
-                                            xmlns='http://www.w3.org/2000/svg'
-                                            width='30'
-                                            height='30'
-                                            viewBox='0 0 30 30'
-                                        >
-                                            <path d='M15 3C8.373 3 3 8.373 3 15c0 5.623 3.872 10.328 9.092 11.63a1.751 1.751 0 0 1-.092-.583v-2.051h-1.508c-.821 0-1.551-.353-1.905-1.009-.393-.729-.461-1.844-1.435-2.526-.289-.227-.069-.486.264-.451.615.174 1.125.596 1.605 1.222.478.627.703.769 1.596.769.433 0 1.081-.025 1.691-.121.328-.833.895-1.6 1.588-1.962-3.996-.411-5.903-2.399-5.903-5.098 0-1.162.495-2.286 1.336-3.233-.276-.94-.623-2.857.106-3.587 1.798 0 2.885 1.166 3.146 1.481A8.993 8.993 0 0 1 15.495 9c1.036 0 2.024.174 2.922.483C18.675 9.17 19.763 8 21.565 8c.732.731.381 2.656.102 3.594.836.945 1.328 2.066 1.328 3.226 0 2.697-1.904 4.684-5.894 5.097C18.199 20.49 19 22.1 19 23.313v2.734c0 .104-.023.179-.035.268C23.641 24.676 27 20.236 27 15c0-6.627-5.373-12-12-12z' />
-                                        </svg>
-                                    </Link>
                                     <Link
                                         href={modalData.externalUrl}
                                         target='_blank'

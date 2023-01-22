@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import me_photo from '../src/img/me_photo.jpg'
 import FMWrapperRight from '../components/FMWrapperRight'
+import me_photo from '../src/img/me_photo.webp'
 
 import Projects from '../components/Projects'
 

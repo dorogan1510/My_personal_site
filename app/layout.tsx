@@ -1,8 +1,8 @@
-import './globals.css'
-import Header from './Header'
-import Footer from './Footer'
 import localFont from '@next/font/local'
-import { Provider } from './Provider'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import '../styles/globals.css'
+import { Provider } from '../styles/Provider'
 
 const roboto = localFont({
     src: [
