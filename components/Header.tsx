@@ -1,13 +1,10 @@
 'use client'
 
-import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
-import { Button, Dropdown, Modal, Navbar } from 'flowbite-react'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { Button, Modal, Navbar } from 'flowbite-react'
 import { useTheme } from 'next-themes'
-import Router, { useRouter } from 'next/navigation'
-import { en } from '../src/translation/en'
-import { ru } from '../src/translation/ru'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Header = () => {
     const [visible, setVisible] = useState(false)
@@ -115,10 +112,6 @@ const Header = () => {
                 </Modal.Body>
             </Modal>
             <div className='flex flex-row  md:flex-1 justify-end gap-2'>
-                {/* <select className='text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:ring-blue-700 focus:text-blue-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700  dark:disabled:hover:bg-gray-800  group flex h-min items-center justify-center  text-center font-medium focus:z-10 rounded-full transition'>
-                    <option className='p-10'>RU</option>
-                    <option>EN</option>
-                </select> */}
                 <div className=' flex  justify-end'>
                     <button
                         onClick={() => {
