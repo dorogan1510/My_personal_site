@@ -7,17 +7,17 @@ import { Provider } from '../styles/Provider'
 const roboto = localFont({
     src: [
         {
-            path: './fonts/Roboto-Regular.ttf',
+            path: '../src/fonts/Roboto-Regular.ttf',
             weight: '400',
             style: 'normal',
         },
         {
-            path: './fonts/Roboto-Medium.ttf',
+            path: '../src/fonts/Roboto-Medium.ttf',
             weight: '500',
             style: 'normal',
         },
         {
-            path: './fonts/Roboto-Bold.ttf',
+            path: '../src/fonts/Roboto-Bold.ttf',
             weight: '700',
             style: 'normal',
         },

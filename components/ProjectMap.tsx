@@ -4,6 +4,7 @@ import { Modal } from 'flowbite-react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
+import anastasia_businnes_card from '/src/img/anastasia_business_card.webp'
 import business_card_screen from '/src/img/business_card_screen.webp'
 import child_club_screen from '/src/img/child_club_screen.webp'
 import english_course_screen from '/src/img/english_course_screen.webp'
@@ -24,6 +25,14 @@ interface IALL_PROJECTS_TEXT {
 }
 
 const ALL_PROJECTS_TEXT: IALL_PROJECTS_TEXT[] = [
+    {
+        id: 10,
+        h2text: 'Персональный сайт для преподавателя иностранных языков',
+        p2text: 'Лендинг с плавными анимациями и всей необходимой информацией',
+        litext: ['Next.js 13', 'Typescript', 'MaterialUI', 'Sass'],
+        externalUrl: 'https://www.zazafox.ru/',
+        image: anastasia_businnes_card,
+    },
     {
         id: 9,
         h2text: 'Сайт детского футбольного клуба',
