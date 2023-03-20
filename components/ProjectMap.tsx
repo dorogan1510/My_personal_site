@@ -14,6 +14,7 @@ import online_store_screen from '/src/img/online_store_screen.webp'
 import polina_site_screen from '/src/img/polina_site_screen.webp'
 import todo_screen from '/src/img/todo_screen.webp'
 import weather_screen from '/src/img/weather_screen.webp'
+import rental_screen from '/src/img/rental_screen.webp'
 
 interface IALL_PROJECTS_TEXT {
     id: number
@@ -25,6 +26,14 @@ interface IALL_PROJECTS_TEXT {
 }
 
 const ALL_PROJECTS_TEXT: IALL_PROJECTS_TEXT[] = [
+    {
+        id: 11,
+        h2text: 'Сайт посуточной аренды квартир в Санкт-Петербурге',
+        p2text: 'Многостраничый сайт по аренде недвижимости в Санкт-Петербурге',
+        litext: ['Next.js 13', 'Typescript', 'MaterialUI', 'Sass'],
+        externalUrl: 'https://www.welcometospb.ru/',
+        image: rental_screen,
+    },
     {
         id: 10,
         h2text: 'Персональный сайт для преподавателя иностранных языков',
